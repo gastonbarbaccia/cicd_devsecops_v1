@@ -1,4 +1,4 @@
-name: DevSecOps Pipeline
+name: DevOps
 
 on:
   push:
@@ -34,7 +34,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: 
       name: staging
-      url: https://
+      url: http://devops-dev.ga
     needs: [Import_SQL]
     steps:
       - uses: actions/checkout@v2
