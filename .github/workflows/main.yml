@@ -95,7 +95,7 @@ jobs:
         id: Depcheck
         with:
           project: "test"
-          path: "/src"
+          path: "src/"
           format: "HTML"
       - name: Upload Test results
         uses: actions/upload-artifact@master
