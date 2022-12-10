@@ -121,7 +121,7 @@ jobs:
 
   Deploy_staging:
     name: Deploy Staging
-    if: github.ref == 'refs/heads/develop'
+#    if: github.ref == 'refs/heads/develop'
     runs-on: ubuntu-latest
     environment: 
       name: staging
@@ -136,4 +136,4 @@ jobs:
           user: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           localDir: "."
-          remoteDir: "." 
+          remoteDir: "gastonbarbaccia/" 
