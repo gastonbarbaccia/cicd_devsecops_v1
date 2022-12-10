@@ -101,14 +101,30 @@ jobs:
           name: Depcheck report
           path: ${{github.workspace}}/reports
 
+  Import_SQL:
+    runs-on: ubuntu-latest
+    name: MySQL Deploy Action
+    needs: [sonarcloud,dependency_check]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - uses: gtadam/mysql-deploy-action@v1
+        with:
+            DATABASE_HOST: ${{ secrets.DATABASE_HOST }}
+            DATABASE_PORT: ${{ secrets.DATABASE_PORT }}
+            DATABASE_NAME: ${{ secrets.DATABASE_NAME }}
+            DATABASE_USERNAME: ${{ secrets.DATABASE_USERNAME }}
+            DATABASE_PASSWORD: ${{ secrets.DATABASE_PASSWORD }}
+            DATABASE_SCRIPT: ${{ secrets.DATABASE_SCRIPT }}
+
   Deploy_staging:
     name: Deploy Staging
     if: github.ref == 'refs/heads/develop'
     runs-on: ubuntu-latest
     environment: 
       name: staging
-      url: https://staging-crane.ga/
-    needs: [dependency_check,sonarcloud]
+      url: https://
+    needs: [Import_SQL]
     steps:
       - uses: actions/checkout@v2
       - name: Upload ftp
