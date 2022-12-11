@@ -7,7 +7,7 @@ function conexiondb(){
 	$localhost = "database-1-ohio.capjeqwtb4vf.us-east-2.rds.amazonaws.com";
 	$username = "admin";
 	$password = "Inicio1234.";
-	$database = "proyecto1";
+	$database = "proyecto2";
 
 	// crea la conexion con los datos pasados en la funcion mysqli()
 	$mysqli = new mysqli($localhost, $username ,$password , $database);
