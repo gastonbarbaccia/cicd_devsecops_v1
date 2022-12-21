@@ -1,11 +1,11 @@
-DROP DATABASE `proyecto1`;
+DROP DATABASE `proyecto2`;
 --
 -- Base de datos: `proyecto1`
 --
-CREATE DATABASE  `proyecto1`;
+CREATE DATABASE  `proyecto2`;
 -- --------------------------------------------------------
 
-USE `proyecto1`;
+USE `proyecto2`;
 
 --
 -- Estructura de tabla para la tabla `usuarios`
